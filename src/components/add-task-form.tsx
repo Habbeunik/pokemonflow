@@ -1,9 +1,8 @@
+import { PokemonTask } from '@/types';
 import {
 	Button,
 	Input,
 	Form,
-	Slider,
-	Select,
 	Space,
 	InputNumber,
 	InputRef,
@@ -36,21 +35,21 @@ export default function AddTaskForm(props: IAddTaskFormProps) {
 	return (
 		<Form
 			layout={'vertical'}
-			variant={'filled'}
+			variant={'outlined'}
 			colon={false}
 			requiredMark={false}
 			initialValues={task}
 			onFinish={(values) => {
 				onSubmit({ ...task, ...values, levelRange, isLastTask });
 			}}>
-			<Form.Item label="Title" name="title" required>
-				<Input required ref={inputRef} />
+			<Form.Item name="title" required>
+				<Input placeholder="Title" required ref={inputRef} />
 			</Form.Item>
-			<Form.Item label="Pokemon Name" name="pokemonType" required>
-				<Input required />
+			<Form.Item name="pokemonType" required>
+				<Input placeholder="Pokemon Name" />
 			</Form.Item>
-			<Form.Item label="Location" name="location" required>
-				<Input required />
+			<Form.Item name="location" required>
+				<Input placeholder="Location" required />
 			</Form.Item>
 			<Form.Item label="Level" name="level_range">
 				<div className="w-full flex justify-stretch gap-x-2">
@@ -68,16 +67,16 @@ export default function AddTaskForm(props: IAddTaskFormProps) {
 					/>
 				</div>
 			</Form.Item>
-			<Form.Item label="Special Move" name="specialMove" required>
-				<Input required />
+			<Form.Item name="specialMove" required>
+				<Input placeholder="Special Move" required />
 			</Form.Item>
-			<Form.Item label="Catch Rate" name="catchRate" required>
-				<Input required />
+			<Form.Item name="catchRate" required>
+				<Input placeholder="Catch Rate" required />
 			</Form.Item>
-			<Form.Item label={'Time Of Day'} name={'timeOfDay'} required>
-				<Input required />
+			<Form.Item name={'timeOfDay'} required>
+				<Input placeholder={'Time Of Day'} required />
 			</Form.Item>
-			<Form.Item label={'Extra'} name={'extra'}>
+			<Form.Item name={'extra'}>
 				<TextArea placeholder="Extra" rows={2} name="extra" />
 			</Form.Item>
 			<Form.Item label="Last task" name="isLastTask">
@@ -90,15 +89,23 @@ export default function AddTaskForm(props: IAddTaskFormProps) {
 			<Form.Item>
 				{isEdit ? (
 					<Space className="w-full">
-						<Button type="primary" htmlType="submit" className="w-full">
+						<Button
+							type="primary"
+							size="large"
+							htmlType="submit"
+							className="w-full">
 							Save
 						</Button>
-						<Button onClick={onCancel} className="w-full">
+						<Button size="large" onClick={onCancel} className="w-full">
 							Cancel
 						</Button>
 					</Space>
 				) : (
-					<Button type="primary" htmlType="submit" className="w-full">
+					<Button
+						size="large"
+						type="primary"
+						htmlType="submit"
+						className="w-full">
 						Add Task
 					</Button>
 				)}

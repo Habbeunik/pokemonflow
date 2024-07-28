@@ -2,6 +2,7 @@ import { EditOutlined } from '@ant-design/icons';
 import { Button, Card, Checkbox, Space, Typography } from 'antd';
 import { useState } from 'react';
 import AddTaskForm from './add-task-form';
+import { PokemonTask } from '@/types';
 
 const { Text, Title } = Typography;
 

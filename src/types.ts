@@ -1,4 +1,4 @@
-interface PokemonTask {
+export interface PokemonTask {
 	title: string;
 	pokemonType: string;
 	location: string;
@@ -8,4 +8,9 @@ interface PokemonTask {
 	extra?: string;
 	timeOfDay: string;
 	isLastTask: boolean;
+}
+
+export enum CustomNodeTypes {
+	Display = 'nodeDisplay',
+	Entry = 'nodeEntry',
 }
