@@ -96,10 +96,6 @@ export default function AdminPage() {
 					data: {
 						...n.data,
 						onSubmit: (t: PokemonTask) => {
-							console.log(
-								'nodeStore.nodes?.length - 1 === idx',
-								nodeStore.nodes?.length - 1 === idx
-							);
 							nodeStore.nodes?.length - 1 === idx
 								? saveNodeEntry(t)
 								: updateNodeEntry(n.id, t);
